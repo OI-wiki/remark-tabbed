@@ -28,7 +28,7 @@ function tabbed_handle(node: any, parent: Node, state: Context) {
     let header = '=== ';
     let original_children = [...node.children]
     node.children = original_children.slice(0, 1) // title
-    header += `"${containerFlow(node, state)}"`
+    header += containerFlow(node, state)
     node.children = original_children.slice(1, original_children.length) // content
     let value = containerFlow(node, state)
     value = indentLines(value, map)
