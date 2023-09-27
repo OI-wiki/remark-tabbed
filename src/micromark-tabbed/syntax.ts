@@ -14,10 +14,6 @@ const tabbedIndent: string = "tabbedIndent";
 const tabbedBeginSign = codes.equalsTo;
 const tabbedBeginSignNum = 3;
 
-// Two features:
-// 1. ===!
-// 2. ===+
-
 /*
 
 Syntax:
@@ -37,7 +33,6 @@ Container
  - Lines
   - Indents
   - Chunk
-
 
 */
 

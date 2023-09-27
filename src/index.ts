@@ -4,6 +4,7 @@ import { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
 import { tabbedToMarkdown } from "./mdast-utils-tabbed/ast2md";
+import { fromMarkdownTabbed } from "./mdast-utils-tabbed/md2ast";
 import { syntax } from "./micromark-tabbed/syntax";
 
 interface TabbedNode extends Node {
@@ -32,7 +33,7 @@ const remarkTabbed: Plugin = function (options) {
   }
 
   add("micromarkExtensions", syntax);
-  // add('fromMarkdownExtensions', fromMarkdownTabbed);
+  add('fromMarkdownExtensions', fromMarkdownTabbed);
   add("toMarkdownExtensions", tabbedToMarkdown);
 
   return transform;
