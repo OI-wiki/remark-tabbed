@@ -6,8 +6,8 @@ export const tabbedHtml: Extension = {
     tabbedContainer() {
       (this as any).tag("<tabbed>");
     },
-    tabbedContainerSummary() {
-      (this as any).tag("<summary>");
+    tabbedContainerTitle() {
+      (this as any).tag("<title>");
       this.buffer();
     },
   },
@@ -15,10 +15,10 @@ export const tabbedHtml: Extension = {
     tabbedContainer() {
       (this as any).tag("</tabbed>");
     },
-    tabbedContainerSummary() {
+    tabbedContainerTitle() {
       const data = this.resume();
       (this as any).raw(data);
-      (this as any).tag("</summary>");
+      (this as any).tag("</title>");
     },
   },
 };

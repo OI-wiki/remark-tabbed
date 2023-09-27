@@ -1,5 +1,5 @@
 import { markdownSpace } from "micromark-util-character";
-import { Code, Effects, State } from "micromark-util-types";
+import { Effects, State } from "micromark-util-types";
 
 export function factoryExactSpace(
   effects: Effects,

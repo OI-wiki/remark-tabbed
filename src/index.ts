@@ -3,9 +3,9 @@ import { h } from "hastscript";
 import { Plugin } from "unified";
 import { visit } from "unist-util-visit";
 
-import { tabbedToMarkdown } from "./mdast-utils-tabbed/ast2md";
-import { fromMarkdownTabbed } from "./mdast-utils-tabbed/md2ast";
-import { syntax } from "./micromark-tabbed/syntax";
+import { tabbedToMarkdown } from "./mdast-utils-tabbed/ast2md.js";
+import { fromMarkdownTabbed } from "./mdast-utils-tabbed/md2ast.js";
+import { syntax } from "./micromark-tabbed/syntax.js";
 
 interface TabbedNode extends Node {
   name: string;
