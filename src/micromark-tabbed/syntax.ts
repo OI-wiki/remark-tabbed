@@ -6,7 +6,6 @@ import { constants } from "micromark-util-symbol/constants.js";
 import { types } from "micromark-util-symbol/types.js";
 import { Extension, State, Token, Tokenizer } from "micromark-util-types";
 
-// import { factoryDetailsClass } from './factory-details-class.js';
 import { factoryExactSpace } from "./factory-exact-space";
 import { factoryTitle } from "./factory-title";
 
@@ -142,11 +141,11 @@ const tokenizeTabbedContainer: Tokenizer = (effects, ok, nok) => {
   };
 
   const contentEnding: State = (code) => {
-    effects.exit("detailsContainerContent");
+    effects.exit("tabbedContainerContent");
     return containerEnding(code);
   };
   const containerEnding: State = (code) => {
-    effects.exit("detailsContainer");
+    effects.exit("tabbedContainer");
     return ok(code);
   };
 
