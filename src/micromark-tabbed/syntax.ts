@@ -6,8 +6,8 @@ import { constants } from "micromark-util-symbol/constants.js";
 import { types } from "micromark-util-symbol/types.js";
 import { Extension, State, Token, Tokenizer } from "micromark-util-types";
 
-import { factoryExactSpace } from "./factory-exact-space";
-import { factoryTitle } from "./factory-title";
+import { factoryExactSpace } from "./factory-exact-space.js";
+import { factoryTitle } from "./factory-title.js";
 
 const tabbedIndent: string = "tabbedIndent";
 const tabbedBeginSign = codes.equalsTo;

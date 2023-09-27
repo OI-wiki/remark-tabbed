@@ -2,6 +2,8 @@
   "name": "remark-code-blocks",
   "version": "0.0.0",
   "description": "A remark extention to support tabbed syntax in pymarkdown.",
+  "main": "lib/index.js",
+  "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
     "build": "tsc"
