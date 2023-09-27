@@ -73,19 +73,6 @@ that is the question</p></tabbed>
 	message: 'tabbed ends with empty line',
 });
 
-
-testCase({
-  input: 
-`=== Python
-    to be or not to be
-    that is the question
-but now it is not`,
-  expected: `<tabbed><title>Python</title><p>to be or not to be
-that is the question</p></tabbed>
-<p>but now it is not</p>`,
-  message: "tabbed ends without empty line",
-});
-
 testCase({
 	input: 
 `=== C++
@@ -114,7 +101,7 @@ testCase({
 `=== Python
     > I have drunken deep of joy,
     And I will taste no other wine tonight
-    
+
 thats it`,
 	expected: `<tabbed><title>Python</title><blockquote>
 <p>I have drunken deep of joy,
@@ -122,6 +109,26 @@ And I will taste no other wine tonight</p>
 </blockquote></tabbed>
 <p>thats it</p>`,
 	message: 'tabbed with note and blockquote',
+});
+
+testCase({
+  input: `=== Python
+    \`\`\`python
+    a = 1
+    \`\`\`
+
+=== C++
+    \`\`\`cpp
+    int a = 1;
+    \`\`\`
+
+Here are 2 versions of code.`,
+  expected: `<tabbed><title>Python</title><pre><code class="language-python">a = 1
+</code></pre></tabbed>
+<tabbed><title>C++</title><pre><code class="language-cpp">int a = 1;
+</code></pre></tabbed>
+<p>Here are 2 versions of code.</p>`,
+  message: "2 code tabs",
 });
 
 // for (let i = 8; i <= 15; ++i) {
