@@ -4,7 +4,7 @@ import { Extension } from "mdast-util-from-markdown/lib";
 export const tabbedHtml: Extension = {
   enter: {
     tabbedContainer() {
-      (this as any).tag("<tab>");
+      (this as any).tag("<tabbed>");
     },
     tabbedContainerSummary() {
       (this as any).tag("<summary>");

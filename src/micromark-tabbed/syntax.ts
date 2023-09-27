@@ -163,4 +163,3 @@ export const syntax: Extension = {
   },
 };
 
-export default syntax;
