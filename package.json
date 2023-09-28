@@ -1,5 +1,5 @@
 {
-  "name": "remark-code-blocks",
+  "name": "remark-tabbed",
   "version": "0.0.0",
   "description": "A remark extention to support tabbed syntax in pymarkdown.",
   "main": "lib/index.js",
