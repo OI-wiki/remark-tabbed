@@ -90,6 +90,12 @@ const tokenizeTabbedContainer: Tokenizer = (effects, ok, nok) => {
   };
 
   const contentStart: State = (code) => {
+    if (markdownLineEnding(code)) {
+      effects.enter(types.lineEnding);
+      effects.consume(code);
+      effects.exit(types.lineEnding);
+      return contentStart;
+    }
     if (code === codes.eof) {
       effects.exit("tabbedContainer");
       return ok(code);
@@ -154,7 +160,6 @@ const tokenizeTabbedContainer: Tokenizer = (effects, ok, nok) => {
 
 const tabbedContainer = {
   tokenize: tokenizeTabbedContainer,
-  concrete: true, // Shaoyu: Should this be true?
 };
 
 export const syntax: Extension = {
@@ -162,4 +167,3 @@ export const syntax: Extension = {
     [tabbedBeginSign]: tabbedContainer,
   },
 };
-
