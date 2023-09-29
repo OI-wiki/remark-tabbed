@@ -2,6 +2,7 @@ import { Element, Node, Root } from 'hast';
 import { unified, Plugin, Transformer } from 'unified';
 import rehypeStringify from 'rehype-stringify';
 import remarkParse from 'remark-parse';
+// import remarkDetails from "remark-details";
 import remark2rehype from 'remark-rehype';
 import { visit } from 'unist-util-visit';
 import { h } from 'hastscript';
@@ -20,15 +21,18 @@ const htmlTabbed: Plugin<[], Root, Root> = function (): Transformer<Root> {
 }
 
 testCase.processor = input => {
-	return unified()
-		.use(remarkParse)
-		// the main plugin written, based on micromark
-		.use(remarkTabbed)
-		// the function above, transform tabbed related tags to html-compilable
-		.use(htmlTabbed)
-		.use(remark2rehype)
-		.use(rehypeStringify)
-		.processSync(input).value as string;
+	return (
+    unified()
+      .use(remarkParse)
+      // the main plugin written, based on micromark
+      .use(remarkTabbed)
+    //   .use(remarkDetails)
+      // the function above, transform tabbed related tags to html-compilable
+      .use(htmlTabbed)
+      .use(remark2rehype)
+      .use(rehypeStringify)
+      .processSync(input).value as string
+  );
 }
 
 testCase({
@@ -131,10 +135,10 @@ Here are 2 versions of code.`,
   message: "2 code tabs",
 });
 
-// for (let i = 8; i <= 15; ++i) {
-// 	testCase({
-// 		input: fromPath(`test/input/${i}.md`),
-// 		expected: fromPath(`test/expected/${i}.md`),
-// 		message: 'tabbed with many codes'
-// 	});
-// }
+for (let i = 1; i <= 2; ++i) {
+	testCase({
+		input: fromPath(`./inputs/${i}.md`),
+		expected: "",
+		message: 'tabbed with many codes'
+	});
+}
