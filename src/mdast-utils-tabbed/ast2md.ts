@@ -9,6 +9,7 @@ declare module "mdast-util-to-markdown" {
     // Register a new construct name (value is used, key should match it).
     tabbedContainer: "tabbedContainer";
     tabbedContainerTitle: "tabbedContainerTitle";
+    tabbedContainerContent: "tabbedContainerContent";
   }
 }
 
@@ -24,11 +25,18 @@ function map(line: string, _: any, blank: any) {
 
 function tabbed_handle(node: any, parent: Node, state: Context) {
   const exit = state.enter("tabbed" as any);
+//   console.log(node);
   let header = "=== ";
   let original_children = [...node.children];
   node.children = original_children.slice(0, 1); // title
   header += containerFlow(node, state);
   node.children = original_children.slice(1, original_children.length); // content
+//   for (let child of node.children) {
+//     if (typeof(child.value) != "string") {
+//         child.value = child.value.toString()
+//     }
+//   }
+//   console.log(node);
   let value = containerFlow(node, state);
   value = indentLines(value, map);
   exit();
