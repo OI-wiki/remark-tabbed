@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 
 ver=$(grep -oP '"version": "\K[^"]+' ../package.json)
 
