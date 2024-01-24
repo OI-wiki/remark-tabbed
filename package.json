@@ -1,6 +1,6 @@
 {
   "name": "remark-tabbed",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A remark extention to support tabbed syntax in pymarkdown.",
   "main": "lib/index.js",
   "type": "module",
@@ -16,6 +16,7 @@
   "author": "Shaoyu Wang",
   "license": "ISC",
   "devDependencies": {
+    "@types/hast": "^3.0.3",
     "ava": "^5.3.1",
     "bumpp": "^6.0.6",
     "child_process": "^1.0.2",
@@ -39,7 +40,6 @@
     "zx": "^2.0.0"
   },
   "dependencies": {
-    "hast": "^1.0.0",
     "hastscript": "^7.0.2",
     "mdast-util-from-markdown": "^1.0.2",
     "mdast-util-to-markdown": "^1.0.0",
