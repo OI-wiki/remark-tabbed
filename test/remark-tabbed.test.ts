@@ -134,11 +134,3 @@ Here are 2 versions of code.`,
 <p>Here are 2 versions of code.</p>`,
   message: "2 code tabs",
 });
-
-for (let i = 1; i <= 2; ++i) {
-	testCase({
-		input: fromPath(`./inputs/${i}.md`),
-		expected: "",
-		message: 'tabbed with many codes'
-	});
-}

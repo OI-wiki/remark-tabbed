@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "check": "tsc --noEmit",
-    "build": "tsc"
+    "build": "tsc",
+    "test": "cd test/ && tsc && ava micromark-tabbed.test.js && ava remark-tabbed.test.js"
   },
   "keywords": [
     "remark",
